@@ -13,9 +13,10 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-      - run: composer install --no-dev --prefer-dist
       
-      - uses: packagist/action@v1
+      - uses: ramsey/composer-update-packagist@v2
         with:
-          package_name: screenshotmax/sdk
+          username: ${{ secrets.PACKAGIST_USERNAME }}
           api_token: ${{ secrets.PACKAGIST_TOKEN }}
+
+      # - uses: softprops/action-gh-release@v2
