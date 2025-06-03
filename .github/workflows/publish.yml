@@ -13,10 +13,9 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-      
-      - uses: ramsey/composer-update-packagist@v2
-        with:
-          username: ${{ secrets.PACKAGIST_USERNAME }}
-          api_token: ${{ secrets.PACKAGIST_TOKEN }}
+
+      - run: |
+          composer config --global --auth http-basic.repo.packagist.com ${{ secrets.PACKAGIST_USERNAME }} ${{ secrets.PACKAGIST_TOKEN }}
+          composer publish --verbose
 
       # - uses: softprops/action-gh-release@v2
