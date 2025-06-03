@@ -2,6 +2,26 @@
   "name": "screenshotmax/sdk",
   "description": "Official PHP SDK for the ScreenshotMAX API",
   "type": "library",
+  "homepage": "https://screenshotmax.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bertrand Lebonnois",
+      "email": "support@screenshotmax.com",
+      "homepage": "https://screenshotmax.com",
+      "role": "Owner"
+    }
+  ],
+  "keywords": [
+    "screenshot",
+    "scraping",
+    "pdf",
+    "api",
+    "sdk"
+  ],
+  "support": {
+    "email": "support@screenshotmax.com"
+  },
   "require": {
     "php": ">=8.0"
   },
@@ -9,5 +29,6 @@
     "psr-4": {
       "ScreenshotMax\\": "src/"
     }
-  }
+  },
+  "minimum-stability": "stable"
 }
