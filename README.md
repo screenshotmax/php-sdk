@@ -40,6 +40,8 @@ file_put_contents('screenshot.png', $result['data']);
 
 ### Web scraping example
 ```php
+<?php
+
 use ScreenshotMax\SDK;
 use ScreenshotMax\Options\ScrapeOptions;
 
@@ -58,6 +60,8 @@ file_put_contents('scrape.html', $result['data']);
 
 ### PDF generation example
 ```php
+<?php
+
 use ScreenshotMax\SDK;
 use ScreenshotMax\Options\PDFOptions;
 
@@ -76,25 +80,30 @@ file_put_contents('pdf.pdf', $result['data']);
 
 ### Scheduled task example
 ```php
+<?php
+
 use ScreenshotMax\SDK;
 
 $sdk = new SDK('<ACCESS_KEY>', '<SECRET_KEY>');
 
 # get all tasks from account
 $tasks = $sdk->task->get_tasks()
-# {"tasks":[{
-# "id":5678133109850112,
-# "name":"Test CRON",
-# "api":"screenshot",
-# "query":
-# "url=https%3A%2F%2Fexample.com",
-# "frequency":"every_day",
-# "crontab":"25 13 * * *",
-# "timezone":"Etc/UTC",
-# "enabled":true,
-# "created":1747229104,
-# "last_run":1748611516,
-# "runs":18}]}
+print_r($tasks['data']);
+
+/* {"tasks":[{
+  "id":5678133109850112,
+  "name":"Test CRON",
+  "api":"screenshot",
+  "query":
+  "url=https%3A%2F%2Fexample.com",
+  "frequency":"every_day",
+  "crontab":"25 13 * * *",
+  "timezone":"Etc/UTC",
+  "enabled":true,
+  "created":1747229104,
+  "last_run":1748611516,
+  "runs":18}]}
+*/
 ```
 
 ## License
